@@ -4,7 +4,7 @@
   "description": "Backend for evalu8 exam platform",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "Terry D Bartels",
   "license": "ISC",
