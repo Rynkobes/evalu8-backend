@@ -3,6 +3,17 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
+//  Imports for different API'S ie:(User, Assessment, Courses, Classes, Records)
+
+const userRoutes = require('./routes/user')
+const couseRoutes = require('./routes/courses')
+const classRoutes = require('./routes/classess')
+const assessmentRoutes = require('./routes/assessment')
+
+// Imports for Schema ie: User
+
+const User = require('./schema')
+
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -18,19 +29,9 @@ mongoose.connect("mongodb://localhost:27017/evalu8" )
         console.log(err)
     })
 
-const userSchema = new mongoose.Schema({
-        email: String,
-        password: String,
-        name: String,
-        type: String,
-        class: String,
-        courses: [String]
-    })
-    
-const User = mongoose.model('User', userSchema);
 const user = new User({
-    name: 'Serena Lucille Bartels',
-    email: 'serena@bemasolutions.com',
+    name: 'Analisa Afottey',
+    email: 'analisa@bemasolutions.com',
     type: 'Student',
 })
 
