@@ -5,9 +5,10 @@ const userSchema = new mongoose.Schema({
     password: String,
     name: String,
     type: String,
-    class: String
+    class: String,
+    courses: [String]
 })
 
 const User = mongoose.model('User', userSchema);
 
-exports.User = { User }
+module.exports = User
